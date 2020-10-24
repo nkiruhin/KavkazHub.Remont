@@ -18,7 +18,7 @@ namespace KavkazHub.Remont.Web.Handlers
             _service = service;
         }
 
-        public Enum.ImageCategory GetCategoryByName(string name)
+        private Enum.ImageCategory GetCategoryByName(string name)
         {
             if (name == "без отделки") return Enum.ImageCategory.NoDecoration;
             if (name == "люкс") return Enum.ImageCategory.Luxe;
@@ -39,7 +39,14 @@ namespace KavkazHub.Remont.Web.Handlers
             {
                 ImageCategory = GetCategoryByName(output.Prediction),
                 ImageCategoryDescription = output.Prediction,
-                ImageName = request.File.FileName
+                ImageName = request.File.FileName,
+                PredictionValues = new Score
+                {
+                    NoDecoration = $"{Math.Round(output.Score[0], 4) * 100}%",
+                    Luxe = $"{Math.Round(output.Score[1], 4) * 100}%",
+                    Standart = $"{Math.Round(output.Score[2], 4) * 100}%",
+                    NeedOfRepair = $"{Math.Round(output.Score[3], 4) * 100}%"
+                }
             });
         }
     }
