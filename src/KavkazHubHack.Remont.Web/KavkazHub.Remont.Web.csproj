@@ -8,6 +8,7 @@
     <WebProjectMode>true</WebProjectMode>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
+    <UserSecretsId>687a45a9-55a7-4a60-b330-27f6da33cef4</UserSecretsId>
   </PropertyGroup>
   
   <ItemGroup>

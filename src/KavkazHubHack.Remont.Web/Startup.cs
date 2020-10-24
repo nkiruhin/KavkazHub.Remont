@@ -40,10 +40,10 @@ namespace KavkazHub.Remont.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            string connectionString = Configuration.GetConnectionString("SqliteConnection");  //Configuration.GetConnectionString("DefaultConnection");
+            //string connectionString = Configuration.GetConnectionString("SqliteConnection");  //Configuration.GetConnectionString("DefaultConnection");
 
             services.AddMediatR(GetAssemblies());
-            services.AddDbContext(connectionString);
+            //services.AddDbContext(connectionString);
             // Add MlModel
             services.Configure<MLModelOptions>(opt =>
             {
