@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace KavkazHub.Remont.Core.Enum
+namespace KavkazHub.Remont.Web.Enum
 {
     public enum ImageCategory
     {
