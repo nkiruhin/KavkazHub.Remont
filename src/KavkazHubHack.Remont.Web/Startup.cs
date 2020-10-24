@@ -1,21 +1,22 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
+using KavkazHub.Remont.Core.Interfaces;
+using KavkazHub.Remont.Core.Services;
+using KavkazHub.Remont.Infrastructure;
+using KavkazHub.Remont.ML;
+using KavkazHub.Remont.ML.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
-using KavkazHub.Remont.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using KavkazHub.Remont.ML;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using KavkazHub.Remont.Core.Interfaces;
-using KavkazHub.Remont.Core.Services;
 
 namespace KavkazHub.Remont.Web
 {
@@ -44,6 +45,10 @@ namespace KavkazHub.Remont.Web
             services.AddMediatR(GetAssemblies());
             services.AddDbContext(connectionString);
             // Add MlModel
+            services.Configure<MLModelOptions>(opt =>
+            {
+                opt.ModelPath = @"MLModel.zip";
+            });
             services.TryAddSingleton<RemontMLModel>();
             services.TryAddScoped<IMLRemontService, MLRemontService>();
             services.AddControllers().AddNewtonsoftJson();
