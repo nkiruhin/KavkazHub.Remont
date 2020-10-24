@@ -6,5 +6,6 @@ namespace KavkazHub.Remont.Web.Models
     {
         public string ImageName { get; set; }
         public ImageCategory ImageCategory { get; set; }
+        public string ImageCategoryDescription { get; set; }
     }
 }

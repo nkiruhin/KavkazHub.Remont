@@ -5,13 +5,13 @@ namespace KavkazHub.Remont.Web.Enum
 {
     public enum ImageCategory
     {
-        [Display(Name = "Стандарт")]
-        Standart,
+        [Display(Name = "Без отделки")]
+        NoDecoration,
         [Display(Name = "Люкс")]
         Luxe,
-        [Display(Name ="Без отделки")]
-        NoDecoration,
-        [Display(Name = "Требует ремонта")]
-        NeedOfRepiar
+        [Display(Name = "Стандартный ремонт")]
+        Standart,
+        [Display(Name = "Требует косметический ремонт")]
+        NeedOfRepair
     }
 }

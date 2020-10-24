@@ -6,6 +6,8 @@
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <OutputType>Exe</OutputType>
     <WebProjectMode>true</WebProjectMode>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
   
   <ItemGroup>
@@ -15,15 +17,12 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" Version="3.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" PrivateAssets="All" Version="3.1.4" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.6.3" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj" />
   </ItemGroup>
   
   <ItemGroup>
@@ -34,6 +33,18 @@
   
   <ItemGroup>
     <Folder Include="Api\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\KavkazHub.Remont.Core\KavkazHub.Remont.Core.csproj" />
+    <ProjectReference Include="..\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj" />
+    <ProjectReference Include="..\KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="MLModel.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
