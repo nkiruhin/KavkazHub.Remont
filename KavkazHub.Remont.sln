@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.codebeatignore = .codebeatignore
 		.gitignore = .gitignore
-		.sonarcloud.properties = .sonarcloud.properties
 		DeploymentSettings.props = DeploymentSettings.props
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
@@ -18,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Core", "src\KavkazHub.Remont.Core\KavkazHub.Remont.Core.csproj", "{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Infrastructure", "src\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj", "{37B2E479-1881-4B99-B56F-64165E506B71}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Web", "src\KavkazHubHack.Remont.Web\KavkazHub.Remont.Web.csproj", "{C94AFB13-B724-40B7-AD17-852BAC6A2B47}"
 EndProject
@@ -37,10 +34,6 @@ Global
 		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37B2E479-1881-4B99-B56F-64165E506B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37B2E479-1881-4B99-B56F-64165E506B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37B2E479-1881-4B99-B56F-64165E506B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37B2E479-1881-4B99-B56F-64165E506B71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,7 +52,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7} = {106AE906-5075-410A-B941-912F811848EE}
-		{37B2E479-1881-4B99-B56F-64165E506B71} = {106AE906-5075-410A-B941-912F811848EE}
 		{C94AFB13-B724-40B7-AD17-852BAC6A2B47} = {106AE906-5075-410A-B941-912F811848EE}
 		{F3496B8D-6D46-49C1-8771-5A7E4F84431A} = {106AE906-5075-410A-B941-912F811848EE}
 		{B5B79A48-DE99-4D9D-8FD8-9A3647D37C54} = {106AE906-5075-410A-B941-912F811848EE}

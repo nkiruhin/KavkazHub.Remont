@@ -1,8 +1,6 @@
 ﻿using Ardalis.ListStartupServices;
-using Autofac;
 using KavkazHub.Remont.Core.Interfaces;
 using KavkazHub.Remont.Core.Services;
-using KavkazHub.Remont.Infrastructure;
 using KavkazHub.Remont.ML;
 using KavkazHub.Remont.ML.Configuration;
 using MediatR;
@@ -39,11 +37,7 @@ namespace KavkazHub.Remont.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            //string connectionString = Configuration.GetConnectionString("SqliteConnection");  //Configuration.GetConnectionString("DefaultConnection");
-
             services.AddMediatR(GetAssemblies());
-            //services.AddDbContext(connectionString);
             // Add MlModel
             services.Configure<MLModelOptions>(opt =>
             {
@@ -68,12 +62,6 @@ namespace KavkazHub.Remont.Web
                 config.Path = "/listservices";
             });
         }
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            builder.RegisterModule(new DefaultInfrastructureModule(_env.EnvironmentName == "Development"));
-        }
-
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.EnvironmentName == "Development")

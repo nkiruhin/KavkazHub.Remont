@@ -38,7 +38,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\KavkazHub.Remont.Core\KavkazHub.Remont.Core.csproj" />
-    <ProjectReference Include="..\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj" />
     <ProjectReference Include="..\KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj" />
   </ItemGroup>
   
