@@ -12,6 +12,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using KavkazHub.Remont.ML;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using KavkazHub.Remont.Core.Interfaces;
+using KavkazHub.Remont.Core.Services;
 
 namespace KavkazHub.Remont.Web
 {
@@ -39,7 +43,9 @@ namespace KavkazHub.Remont.Web
 
             services.AddMediatR(GetAssemblies());
             services.AddDbContext(connectionString);
-
+            // Add MlModel
+            services.TryAddSingleton<RemontMLModel>();
+            services.TryAddScoped<IMLRemontService, MLRemontService>();
             services.AddControllers().AddNewtonsoftJson();
 
             services.AddSwaggerGen(c =>
