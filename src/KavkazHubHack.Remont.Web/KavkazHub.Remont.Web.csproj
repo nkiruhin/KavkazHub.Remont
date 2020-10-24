@@ -38,6 +38,12 @@
     <ProjectReference Include="..\KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj" />
   </ItemGroup>
   
+  <ItemGroup>
+    <None Update="MLModel.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
