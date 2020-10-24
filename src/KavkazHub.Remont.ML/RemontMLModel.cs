@@ -1,13 +1,17 @@
 ﻿using KavkazHub.Remont.ML.Interfaces;
+using KavkazHub.Remont.ML.Properties;
 using Microsoft.ML;
 using Microsoft.VisualBasic.FileIO;
 using System;
+using System.IO;
+using System.Reflection;
+using System.Text;
 
 namespace KavkazHub.Remont.ML
 {
     public class RemontMLModel: IRemontMLModel
     {
-        private Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictionEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(CreatePredictionEngine());
+        private readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictionEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(CreatePredictionEngine());
 
         // For more info on consuming ML.NET models, visit https://aka.ms/mlnet-consume
         // Method for consuming model in your app
@@ -23,10 +27,11 @@ namespace KavkazHub.Remont.ML
             MLContext mlContext = new MLContext();
 
             // Load model & create prediction engine
-            string modelPath = @"MLModel.zip";
-            ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
-            var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
+            //string modelPath = @"MLModel.zip";
+            using MemoryStream ms = new MemoryStream(Resources.MLModel);
+            ITransformer mlModel = mlContext.Model.Load(ms, out var modelInputSchema);
+            var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
             return predEngine;
         }
     }

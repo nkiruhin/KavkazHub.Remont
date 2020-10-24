@@ -2,6 +2,7 @@
 using KavkazHub.Remont.Web.Command;
 using KavkazHub.Remont.Web.Models;
 using MediatR;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +19,11 @@ namespace KavkazHub.Remont.Web.Handlers
 
         public async Task<ClassificationResponse> Handle(LoadImageFileRequest request, CancellationToken cancellationToken)
         {
-            _service.Predict(new ML.ModelInput { ImageSource = @"c:\Temp\image.jpg" });
+            using (var fs = File.Create("image.jpg"))
+            {
+                await request.File.OpenReadStream().CopyToAsync(fs);
+            }
+            _service.Predict(new ML.ModelInput { ImageSource = "image.jpg" });
             return await Task.FromResult(new ClassificationResponse());
         }
     }
