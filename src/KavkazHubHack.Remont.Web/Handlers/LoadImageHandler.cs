@@ -34,6 +34,7 @@ namespace KavkazHub.Remont.Web.Handlers
                 await request.File.OpenReadStream().CopyToAsync(fs);
             }
             var output = _service.Predict(new ML.ModelInput { ImageSource = fileName });
+            File.Delete(fileName);
             return await Task.FromResult(new ClassificationResponse
             {
                 ImageCategory = GetCategoryByName(output.Prediction),
