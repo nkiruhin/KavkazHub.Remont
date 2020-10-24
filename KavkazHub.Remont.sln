@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Web", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.SharedKernel", "src\KavkazHubHack.Remont.SharedKernel\KavkazHub.Remont.SharedKernel.csproj", "{F3496B8D-6D46-49C1-8771-5A7E4F84431A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KavkazHub.Remont.ML", "KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj", "{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{37B2E479-1881-4B99-B56F-64165E506B71} = {106AE906-5075-410A-B941-912F811848EE}
 		{C94AFB13-B724-40B7-AD17-852BAC6A2B47} = {106AE906-5075-410A-B941-912F811848EE}
 		{F3496B8D-6D46-49C1-8771-5A7E4F84431A} = {106AE906-5075-410A-B941-912F811848EE}
+		{388BB70A-05A8-479A-87CC-3DC0F4D2F7F8} = {106AE906-5075-410A-B941-912F811848EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0F19343-8185-4A9F-9165-0EA8544BC925}
