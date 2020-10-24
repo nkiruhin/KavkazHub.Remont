@@ -41,6 +41,9 @@
   </ItemGroup>
   
   <ItemGroup>
+    <None Update="KavkazHub.Remont.Web.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MLModel.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
