@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KavkazHub.Remont.Web</name>
+    </assembly>
+    <members>
+        <member name="T:KavkazHub.Remont.Web.Command.LoadImageFileRequest">
+            <summary>
+            Параметры метода загрузки файла изображения
+            </summary>
+        </member>
+        <member name="P:KavkazHub.Remont.Web.Command.LoadImageFileRequest.ImageFile">
+            <summary>
+            Файл изображения
+            </summary>
+        </member>
+        <member name="T:KavkazHub.Remont.Web.Endpoints.Images.Load">
+            <summary>
+            Загрузка файла изображения
+            </summary>
+        </member>
+        <member name="M:KavkazHub.Remont.Web.Endpoints.Images.Load.HandleAsync(KavkazHub.Remont.Web.Command.LoadImageFileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Метод для отправки изображения для классификации
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KavkazHub.Remont.Web.Enum.ImageCategory">
+            <summary>
+            Классы отделки
+            </summary>
+        </member>
+        <member name="F:KavkazHub.Remont.Web.Enum.ImageCategory.NoDecoration">
+            <summary>
+            Без отделки
+            </summary>
+        </member>
+        <member name="F:KavkazHub.Remont.Web.Enum.ImageCategory.Luxe">
+            <summary>
+            Люкс
+            </summary>
+        </member>
+        <member name="F:KavkazHub.Remont.Web.Enum.ImageCategory.Standart">
+            <summary>
+            Стандартный ремонт
+            </summary>
+        </member>
+        <member name="F:KavkazHub.Remont.Web.Enum.ImageCategory.NeedOfRepair">
+            <summary>
+            Требуется косметический ремонт
+            </summary>
+        </member>
+        <member name="F:KavkazHub.Remont.Web.Enum.ImageCategory.Unknown">
+            <summary>
+            Неизвестно
+            </summary>
+        </member>
+        <member name="T:KavkazHub.Remont.Web.Models.ClassificationResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KavkazHub.Remont.Web.Models.ClassificationResponse.ImageName">
+            <summary>
+            Имя файла изображения
+            </summary>
+        </member>
+        <member name="P:KavkazHub.Remont.Web.Models.ClassificationResponse.ImageCategory">
+            <summary>
+            Класс отделки
+            </summary>
+        </member>
+        <member name="P:KavkazHub.Remont.Web.Models.ClassificationResponse.ImageCategoryDescription">
+            <summary>
+            Отображемое имя
+            </summary>
+        </member>
+        <member name="P:KavkazHub.Remont.Web.Models.ClassificationResponse.Scores">
+            <summary>
+            Результаты обработки
+            </summary>
+        </member>
+    </members>
+</doc>

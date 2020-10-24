@@ -11,6 +11,10 @@
     <UserSecretsId>687a45a9-55a7-4a60-b330-27f6da33cef4</UserSecretsId>
   </PropertyGroup>
   
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Repos\KavkazHub.Remont\src\KavkazHubHack.Remont.Web\KavkazHub.Remont.Web.xml</DocumentationFile>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Ardalis.ApiEndpoints" Version="2.0.0" />
     <PackageReference Include="Ardalis.ListStartupServices" Version="1.1.3" />

@@ -8,7 +8,6 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["src/KavkazHubHack.Remont.Web/KavkazHub.Remont.Web.csproj", "src/KavkazHubHack.Remont.Web/"]
 COPY ["src/KavkazHub.Remont.Core/KavkazHub.Remont.Core.csproj", "src/KavkazHub.Remont.Core/"]
-COPY ["src/KavkazHubHack.Remont.SharedKernel/KavkazHub.Remont.SharedKernel.csproj", "src/KavkazHubHack.Remont.SharedKernel/"]
 COPY ["src/KavkazHub.Remont.ML/KavkazHub.Remont.ML.csproj", "src/KavkazHub.Remont.ML/"]
 RUN dotnet restore "src/KavkazHubHack.Remont.Web/KavkazHub.Remont.Web.csproj"
 COPY . .

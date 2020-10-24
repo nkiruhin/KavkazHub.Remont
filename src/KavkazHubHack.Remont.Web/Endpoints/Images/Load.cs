@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace KavkazHub.Remont.Web.Endpoints.Images
 {
+    /// <summary>
+    /// Загрузка файла изображения
+    /// </summary>
     public class Load : BaseAsyncEndpoint<LoadImageFileRequest, ClassificationResponse>
     {
 
@@ -20,7 +23,12 @@ namespace KavkazHub.Remont.Web.Endpoints.Images
         {
             _mediator = mediator;
         }
-
+        /// <summary>
+        /// Метод для отправки изображения для классификации
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpPost("/loadImage")]
         [SwaggerOperation(
             Summary = "Load new image",
@@ -31,14 +39,14 @@ namespace KavkazHub.Remont.Web.Endpoints.Images
         public override async Task<ActionResult<ClassificationResponse>> HandleAsync([FromForm] LoadImageFileRequest request, CancellationToken cancellationToken = default)
         {
             ///Ограничение на размер файла 10МБ
-            if (request.File.Length > 10485760)
+            if (request.ImageFile.Length > 10485760)
             {
                 ModelState.AddModelError("Message", $"Превышен допустимый размер файла изображения");
                 return BadRequest(ModelState);
             };
             ///Проверка расширения файла
-            string[] permittedExtensions = { ".jpg", ".png", ".bmp" };
-            var ext = Path.GetExtension(request.File.FileName).ToLowerInvariant();
+            string[] permittedExtensions = { ".jpg", ".png", ".bmp", ".jpeg",".webp", ".jfif" };
+            var ext = Path.GetExtension(request.ImageFile.FileName).ToLowerInvariant();
             if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
             {
                 ModelState.AddModelError("Message", $"Не верный формат файла");

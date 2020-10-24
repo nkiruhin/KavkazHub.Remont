@@ -13,8 +13,10 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace KavkazHub.Remont.Web
 {
@@ -45,12 +47,17 @@ namespace KavkazHub.Remont.Web
             });
             services.TryAddSingleton<RemontMLModel>();
             services.TryAddScoped<IMLRemontService, MLRemontService>();
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
+
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "KavkazHub.Remont API", Version = "v1" });
                 c.EnableAnnotations();
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "KavkazHub.Remont.Web.xml"));
             });
 
             // add list services for diagnostic purposes - see https://github.com/ardalis/AspNetCoreStartupServices

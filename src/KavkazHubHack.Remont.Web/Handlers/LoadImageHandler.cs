@@ -1,9 +1,12 @@
 ﻿using KavkazHub.Remont.Core.Interfaces;
+using KavkazHub.Remont.ML;
 using KavkazHub.Remont.Web.Command;
+using KavkazHub.Remont.Web.Enum;
 using KavkazHub.Remont.Web.Models;
 using MediatR;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,29 +21,40 @@ namespace KavkazHub.Remont.Web.Handlers
             _service = service;
         }
 
-        public Enum.ImageCategory GetCategoryByName(string name)
+        private ImageCategory GetCategoryByName(string name)
         {
-            if (name == "без отделки") return Enum.ImageCategory.NoDecoration;
-            if (name == "люкс") return Enum.ImageCategory.Luxe;
-            if (name == "стандартный ремонт") return Enum.ImageCategory.Standart;
-            return Enum.ImageCategory.NeedOfRepair;
+            return name switch
+            {
+                "без отделки" => ImageCategory.NoDecoration,
+                "люкс" => ImageCategory.Luxe,
+                "стандартный ремонт" => ImageCategory.Standart,
+                "требуется косметический ремонт" => ImageCategory.NeedOfRepair,
+                _ => ImageCategory.Unknown
+            };
         }
 
         public async Task<ClassificationResponse> Handle(LoadImageFileRequest request, CancellationToken cancellationToken)
         {
             var fileName = $"{Guid.NewGuid()}";
-            using (FileStream fs = File.Create(fileName))
+            using (FileStream stream = File.Create(fileName))
             {
-                await request.File.OpenReadStream().CopyToAsync(fs);
+                await request.ImageFile.OpenReadStream().CopyToAsync(stream);
             }
-            var output = _service.Predict(new ML.ModelInput { ImageSource = fileName });
+            var output = _service.Predict(new ModelInput
+            {
+                ImageSource = fileName
+            });
+
             File.Delete(fileName);
-            return await Task.FromResult(new ClassificationResponse
+            var result = new ClassificationResponse
             {
                 ImageCategory = GetCategoryByName(output.Prediction),
                 ImageCategoryDescription = output.Prediction,
-                ImageName = request.File.FileName
-            });
+                ImageName = request.ImageFile.FileName,
+                Scores = output.Score.Select((x, i) => new { key = (ImageCategory)i, Value = $"{Math.Round(x, 4) * 100}%" })
+                        .ToDictionary(x => x.key.ToString(), x => x.Value)
+            };
+            return result;
         }
     }
 }
