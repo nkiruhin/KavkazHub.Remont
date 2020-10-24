@@ -24,17 +24,17 @@ namespace KavkazHub.Remont.ML
         // Method for consuming model in your app
         public ModelOutput Predict(ModelInput input)
         {
-            ModelOutput result = PredictionEngine.Value.Predict(input);
+            var result = PredictionEngine.Value.Predict(input);
             return result;
         }
 
         private PredictionEngine<ModelInput, ModelOutput> CreatePredictionEngine()
         {
             // Create new MLContext
-            MLContext mlContext = new MLContext();
+            var mlContext = new MLContext();
             var modelPath = _options.Value.ModelPath;
             // Load model & create prediction engine
-            ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
+            var mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
             return predEngine;
         }
