@@ -1,6 +1,6 @@
-﻿using KavkazHub.Remont.Core.Enum;
+﻿using KavkazHub.Remont.Web.Enum;
 
-namespace KavkazHub.Remont.Core.Model
+namespace KavkazHub.Remont.Web.Models
 {
     public class ClassificationResponse
     {

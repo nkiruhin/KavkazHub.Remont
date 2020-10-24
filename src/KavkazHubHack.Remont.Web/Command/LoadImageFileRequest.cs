@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
-using KavkazHub.Remont.Core.Model;
 using System.ComponentModel.DataAnnotations;
+using KavkazHub.Remont.Web.Models;
 
-namespace KavkazHub.Remont.Core.Command
+namespace KavkazHub.Remont.Web.Command
 {
     public class LoadImageFileRequest : IRequest<ClassificationResponse>
     {

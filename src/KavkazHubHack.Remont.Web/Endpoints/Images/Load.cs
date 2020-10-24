@@ -1,11 +1,11 @@
 ﻿using Ardalis.ApiEndpoints;
+using KavkazHub.Remont.Web.Command;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using KavkazHub.Remont.Core.Command;
-using KavkazHub.Remont.Core.Model;
 using System.Threading;
 using System.Threading.Tasks;
+using KavkazHub.Remont.Web.Models;
 
 namespace KavkazHub.Remont.Web.Endpoints.Images
 {
@@ -28,7 +28,7 @@ namespace KavkazHub.Remont.Web.Endpoints.Images
         public override async Task<ActionResult<ClassificationResponse>> HandleAsync([FromForm] LoadImageFileRequest request, CancellationToken cancellationToken = default)
         {
 
-            var response = await _mediator.Send(request);
+            var response = await _mediator.Send(request, cancellationToken);
             return Ok(response);
         }
     }

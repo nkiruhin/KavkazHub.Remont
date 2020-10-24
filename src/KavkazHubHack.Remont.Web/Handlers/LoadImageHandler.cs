@@ -1,11 +1,10 @@
-﻿using MediatR;
-using KavkazHub.Remont.Core.Command;
-using KavkazHub.Remont.Core.Model;
-using System;
+﻿using KavkazHub.Remont.Web.Command;
+using KavkazHub.Remont.Web.Models;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KavkazHub.Remont.Core.Handlers
+namespace KavkazHub.Remont.Web.Handlers
 {
     public class LoadImageHandler : IRequestHandler<LoadImageFileRequest, ClassificationResponse>
     {
