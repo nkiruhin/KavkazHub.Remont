@@ -32,9 +32,9 @@
     <br />
     <!--<a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>-->
     ·
-    <a href="https://github.com/nkiruhin/KavkazHub.Remont/PWApp/issues">Report Bug</a>
+    <a href="https://github.com/nkiruhin/KavkazHub.Remont/issues">Report Bug</a>
     ·
-    <a href="https://github.com/nkiruhin/KavkazHub.Remont/PWApp/issues">Request Feature</a>
+    <a href="https://github.com/nkiruhin/KavkazHub.Remont/issues">Request Feature</a>
   </p>
 </p>
 
@@ -138,7 +138,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Nikolay Kirukhin  - nkiruhin@yandex.ru
 
 Project Link: [https://github.com/nkiruhin/KavkazHub.Remont](https://github.com/nkiruhin/KavkazHub.Remont)
 
