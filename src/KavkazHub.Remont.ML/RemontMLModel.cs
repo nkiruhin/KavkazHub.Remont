@@ -28,7 +28,6 @@ namespace KavkazHub.Remont.ML
 
             // Load model & create prediction engine
 
-            //string modelPath = @"MLModel.zip";
             using MemoryStream ms = new MemoryStream(Resources.MLModel);
             ITransformer mlModel = mlContext.Model.Load(ms, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
