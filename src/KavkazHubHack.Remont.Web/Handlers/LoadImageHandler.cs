@@ -2,10 +2,8 @@
 using KavkazHub.Remont.Web.Command;
 using KavkazHub.Remont.Web.Models;
 using MediatR;
-using Microsoft.OpenApi.Extensions;
 using System;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -36,7 +34,7 @@ namespace KavkazHub.Remont.Web.Handlers
                 await request.File.OpenReadStream().CopyToAsync(fs);
             }
             var output = _service.Predict(new ML.ModelInput { ImageSource = fileName });
-            return await Task.FromResult(new ClassificationResponse 
+            return await Task.FromResult(new ClassificationResponse
             {
                 ImageCategory = GetCategoryByName(output.Prediction),
                 ImageCategoryDescription = output.Prediction,

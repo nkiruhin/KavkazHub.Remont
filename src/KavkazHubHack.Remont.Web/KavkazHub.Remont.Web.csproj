@@ -23,10 +23,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <Compile Update="Endpoints\ToDoItems\Update.NewToDoItemRequest.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
@@ -34,6 +30,12 @@
   
   <ItemGroup>
     <Folder Include="Api\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\KavkazHub.Remont.Core\KavkazHub.Remont.Core.csproj" />
+    <ProjectReference Include="..\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj" />
+    <ProjectReference Include="..\KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj" />
   </ItemGroup>
   
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
