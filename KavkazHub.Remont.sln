@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{106AE906-5075-410A-B941-912F811848EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{250F283E-FE2F-4BBD-9E63-A2265B84E23F}"
+	ProjectSection(SolutionItems) = preProject
+		.codebeatignore = .codebeatignore
+		.gitignore = .gitignore
+		.sonarcloud.properties = .sonarcloud.properties
+		DeploymentSettings.props = DeploymentSettings.props
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		nuget.config = nuget.config
+		Packages.props = Packages.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Core", "src\KavkazHub.Remont.Core\KavkazHub.Remont.Core.csproj", "{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Infrastructure", "src\KavkazHub.Remont.Infrastructure\KavkazHub.Remont.Infrastructure.csproj", "{37B2E479-1881-4B99-B56F-64165E506B71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.Web", "src\KavkazHubHack.Remont.Web\KavkazHub.Remont.Web.csproj", "{C94AFB13-B724-40B7-AD17-852BAC6A2B47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KavkazHub.Remont.SharedKernel", "src\KavkazHubHack.Remont.SharedKernel\KavkazHub.Remont.SharedKernel.csproj", "{F3496B8D-6D46-49C1-8771-5A7E4F84431A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B2E479-1881-4B99-B56F-64165E506B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B2E479-1881-4B99-B56F-64165E506B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B2E479-1881-4B99-B56F-64165E506B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B2E479-1881-4B99-B56F-64165E506B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94AFB13-B724-40B7-AD17-852BAC6A2B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3496B8D-6D46-49C1-8771-5A7E4F84431A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5040D3B-94BE-4B9C-BCFD-2B12F0DA66F7} = {106AE906-5075-410A-B941-912F811848EE}
+		{37B2E479-1881-4B99-B56F-64165E506B71} = {106AE906-5075-410A-B941-912F811848EE}
+		{C94AFB13-B724-40B7-AD17-852BAC6A2B47} = {106AE906-5075-410A-B941-912F811848EE}
+		{F3496B8D-6D46-49C1-8771-5A7E4F84431A} = {106AE906-5075-410A-B941-912F811848EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F19343-8185-4A9F-9165-0EA8544BC925}
+	EndGlobalSection
+EndGlobal
