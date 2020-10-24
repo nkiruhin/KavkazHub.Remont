@@ -21,7 +21,7 @@ namespace KavkazHub.Remont.Web.Endpoints.Images
         [HttpPost("/loadImage")]
         [SwaggerOperation(
             Summary = "Load new image",
-            Description = "Creates a new ToDoItem",
+            Description = "Load new image to recognize renovation state",
             OperationId = "",
             Tags = new[] { "LoadImageEndpoints" })
         ]

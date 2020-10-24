@@ -36,12 +36,6 @@
     <Folder Include="Api\" />
   </ItemGroup>
   
-  <ItemGroup>
-    <None Update="MLModel.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

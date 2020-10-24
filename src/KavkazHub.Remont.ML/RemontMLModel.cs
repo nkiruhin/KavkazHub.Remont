@@ -3,6 +3,9 @@ using KavkazHub.Remont.ML.Interfaces;
 using Microsoft.Extensions.Options;
 using Microsoft.ML;
 using System;
+using System.IO;
+using System.Reflection;
+using System.Text;
 
 namespace KavkazHub.Remont.ML
 {
@@ -33,7 +36,6 @@ namespace KavkazHub.Remont.ML
             // Load model & create prediction engine
             ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
-
             return predEngine;
         }
     }
