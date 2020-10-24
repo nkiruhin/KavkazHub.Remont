@@ -36,7 +36,7 @@ namespace KavkazHub.Remont.Web.Endpoints.Images
                 ModelState.AddModelError("Message", $"Превышен допустимый размер файла изображения");
                 return BadRequest(ModelState);
             };
-            ///Проверка расширения файла 10МБ
+            ///Проверка расширения файла
             string[] permittedExtensions = { ".jpg", ".png", ".bmp" };
             var ext = Path.GetExtension(request.File.FileName).ToLowerInvariant();
             if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
