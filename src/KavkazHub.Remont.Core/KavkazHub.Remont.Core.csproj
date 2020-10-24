@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KavkazHub.Remont.ML\KavkazHub.Remont.ML.csproj" />
-    <ProjectReference Include="..\KavkazHubHack.Remont.SharedKernel\KavkazHub.Remont.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
