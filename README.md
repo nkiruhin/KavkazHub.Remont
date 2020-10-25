@@ -108,10 +108,10 @@ dotnet build "KavkazHub.Remont.Web.csproj" -c Release -o /app/build
 ```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Использование
 
 
-_For examples, please refer to the [Documentation](https://github.com/nkiruhin/PWApp/wiki)_
+Документация swagger open api https://kavkazhubremontweb20201024181016.azurewebsites.net/swagger/index.html
 
 
 
